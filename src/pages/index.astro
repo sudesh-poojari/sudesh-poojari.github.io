@@ -1,0 +1,85 @@
+---
+import WritingList from "@/components/WritingList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { byPublishedDate, isPublished } from "@/lib/writing";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("articles")).filter(isPublished).sort(byPublishedDate);
+const latest = articles.slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Frontend systems notebook</p>
+      <h1>Sudesh Poojari</h1>
+      <p class="lede">
+        I write practical notes on React architecture, TypeScript at scale, SSR, accessibility,
+        reliability tooling, and AI-assisted debugging for senior frontend teams.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/articles/">Read articles</a>
+        <a class="button secondary" href="/proficiencies/">View proficiencies</a>
+      </div>
+    </div>
+    <aside class="notebook-panel" aria-label="Engineering themes">
+      <div class="system-map">
+        <div class="map-node">
+          <strong>Architecture</strong>
+          <span>Composed React views, state boundaries, and durable frontend contracts.</span>
+        </div>
+        <div class="map-node">
+          <strong>Performance</strong>
+          <span>SSR readiness, build speed, code loading, and measurement habits.</span>
+        </div>
+        <div class="map-node">
+          <strong>Reliability</strong>
+          <span>Rollouts, observability, accessibility, and production debugging workflows.</span>
+        </div>
+        <div class="map-node">
+          <strong>Practice</strong>
+          <span>NDA-safe field notes, reusable patterns, and practical engineering judgment.</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2>Latest Writing</h2>
+        <p>Short, senior notes for building and operating frontend systems with less guesswork.</p>
+      </div>
+      <a href="/rss.xml">RSS</a>
+    </div>
+    {latest.length > 0 ? <WritingList entries={latest} /> : (
+      <div class="empty-state">
+        <h3>Coming soon</h3>
+        <p>Articles are being drafted and reviewed for NDA-safe publishing.</p>
+      </div>
+    )}
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2>Core Themes</h2>
+        <p>These are the lanes the site will keep returning to as the writing library grows.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="capability">
+        <h3>React Architecture</h3>
+        <p>Patterns for complex views, composition, data flow, and component APIs that survive scale.</p>
+      </article>
+      <article class="capability">
+        <h3>TypeScript at Scale</h3>
+        <p>Build performance, maintainable types, project references, and developer experience.</p>
+      </article>
+      <article class="capability">
+        <h3>Frontend Reliability</h3>
+        <p>Release safety, monitoring, accessibility, failure modes, and AI-assisted debugging.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

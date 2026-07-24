@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const googleFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdVDobkeQLi0Cn04CmrPfdaxz2AaOA6r-Oy59SDtPPjoJ7wBA/viewform?usp=header";
+const embeddedGoogleFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdVDobkeQLi0Cn04CmrPfdaxz2AaOA6r-Oy59SDtPPjoJ7wBA/viewform?embedded=true";
+---
+
+<BaseLayout title="Contact" description="Contact Sudesh Poojari.">
+  <header class="page-title">
+    <p class="eyebrow">Contact</p>
+    <h1>Let’s Talk</h1>
+    <p>
+      Share a role, collaboration idea, technical question, or writing topic you want to discuss.
+    </p>
+  </header>
+
+  <section class="section contact-section">
+    <div class="contact-form-frame">
+      <iframe
+        src={embeddedGoogleFormUrl}
+        title="Contact form"
+        loading="lazy"
+      >
+        Loading contact form...
+      </iframe>
+    </div>
+    <p class="form-note">
+      If the form does not load, <a href={googleFormUrl} target="_blank" rel="noreferrer">open it in a new tab</a>.
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { site } from "@/lib/site";
+---
+
+<BaseLayout title="About" description="About Sudesh Poojari and this technical writing site.">
+  <header class="page-title">
+    <p class="eyebrow">About</p>
+    <h1>About Sudesh</h1>
+    <p>
+      Senior frontend engineer writing about the patterns, tradeoffs, and operating habits behind durable web applications.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="prose">
+      <p>
+        This site is an engineering notebook: practical, company-neutral, and focused on lessons that can be reused without exposing private project details.
+      </p>
+      <p>
+        The main topics are React architecture, TypeScript at scale, SSR and performance, accessibility, reliability tooling, and AI-assisted production debugging workflows.
+      </p>
+      <div class="inline-actions">
+        <a class="button" href="/contact/">Contact</a>
+        <a class="button secondary" href={site.linkedin}>LinkedIn</a>
+        <a class="button secondary" href={site.github}>GitHub</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import { formatDate, readingTime } from "@/lib/writing";
+
+interface Entry {
+  slug: string;
+  body: string;
+  collection: "articles";
+  data: {
+    title: string;
+    description: string;
+    publishedAt: Date;
+    tags: string[];
+  };
+}
+
+interface Props {
+  entries: Entry[];
+}
+
+const { entries } = Astro.props;
+---
+
+<div class="writing-list">
+  {entries.map((entry) => (
+    <article class="writing-card">
+      <div class="writing-card-meta">
+        <time datetime={entry.data.publishedAt.toISOString()}>{formatDate(entry.data.publishedAt)}</time>
+        <span>{readingTime(entry.body)} min read</span>
+      </div>
+      <h2><a href={`/${entry.collection}/${entry.slug}/`}>{entry.data.title}</a></h2>
+      <p>{entry.data.description}</p>
+      <div class="tag-list">
+        {entry.data.tags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </article>
+  ))}
+</div>

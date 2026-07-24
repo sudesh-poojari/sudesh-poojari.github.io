@@ -1,0 +1,62 @@
+---
+import { navItems, site } from "@/lib/site";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = site.title, description = site.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url);
+const pageTitle = title === site.title ? title : `${title} - ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${site.name} RSS`} href="/rss.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label={`${site.name} home`}>
+          <span class="brand-mark">SP</span>
+          <span>{site.name}</span>
+        </a>
+        <div class="nav-links">
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>{site.name}</strong>
+        <p>Frontend systems, architecture, performance, accessibility, and reliability notes.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/rss.xml">RSS</a>
+        <a href="/contact/">Contact</a>
+        <a href={site.linkedin}>LinkedIn</a>
+        <a href={site.github}>GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
