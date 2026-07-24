@@ -3,7 +3,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { site } from "@/lib/site";
 ---
 
-<BaseLayout title="About" description="About Sudesh Poojari and this technical writing site.">
+<BaseLayout
+  title="About"
+  description="About Sudesh Poojari, this technical writing site, and frontend engineering capabilities."
+>
   <header class="page-title">
     <p class="eyebrow">About</p>
     <h1>About Sudesh</h1>
@@ -12,7 +15,7 @@ import { site } from "@/lib/site";
     </p>
   </header>
 
-  <section class="section">
+  <section class="section" id="proficiencies">
     <div class="prose">
       <p>
         This site is an engineering notebook: practical, company-neutral, and focused on lessons that can be reused without exposing private project details.
@@ -20,11 +23,50 @@ import { site } from "@/lib/site";
       <p>
         The main topics are React architecture, TypeScript at scale, SSR and performance, accessibility, reliability tooling, and AI-assisted production debugging workflows.
       </p>
-      <div class="inline-actions">
-        <a class="button" href="/contact/">Contact</a>
-        <a class="button secondary" href={site.linkedin}>LinkedIn</a>
-        <a class="button secondary" href={site.github}>GitHub</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <h2>Proficiencies</h2>
+        <p>Grouped by the kinds of engineering problems I can help a team reason through.</p>
       </div>
+    </div>
+    <div class="grid">
+      <article class="capability">
+        <h3>Frontend Architecture</h3>
+        <p>React, TypeScript, component systems, routing, state boundaries, data fetching, and complex view composition.</p>
+      </article>
+      <article class="capability">
+        <h3>Performance and SSR</h3>
+        <p>Server rendering readiness, bundle health, Core Web Vitals, build speed, caching, and runtime measurement.</p>
+      </article>
+      <article class="capability">
+        <h3>Quality and Accessibility</h3>
+        <p>Accessible components, test strategy, design system resilience, release checks, and practical frontend reliability.</p>
+      </article>
+      <article class="capability">
+        <h3>Developer Experience</h3>
+        <p>TypeScript ergonomics, monorepo workflows, debugging habits, automation, documentation, and review practices.</p>
+      </article>
+      <article class="capability">
+        <h3>Production Operations</h3>
+        <p>Rollout strategy, monitoring signals, graceful failure, incident learning, and supportable UI behavior.</p>
+      </article>
+      <article class="capability">
+        <h3>AI-Assisted Engineering</h3>
+        <p>LLM-supported debugging, codebase exploration, promptable runbooks, and human-reviewed automation workflows.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="inline-actions">
+      <a class="button" href="/contact/">Contact</a>
+      <a class="button secondary" href={site.linkedin}>LinkedIn</a>
+      <a class="button secondary" href={site.github}>GitHub</a>
     </div>
   </section>
 </BaseLayout>

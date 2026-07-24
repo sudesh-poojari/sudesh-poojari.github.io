@@ -11,7 +11,6 @@ export const site = {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/articles/", label: "Articles" },
-  { href: "/proficiencies/", label: "Proficiencies" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" }
 ];
