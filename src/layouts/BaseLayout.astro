@@ -29,6 +29,13 @@ const pageTitle = title === site.title ? title : `${title} - ${site.name}`;
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
     <meta name="twitter:card" content="summary" />
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-YM5Y2F3EEE"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-YM5Y2F3EEE");
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
