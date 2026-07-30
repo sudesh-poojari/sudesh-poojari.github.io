@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Trusted data-driven layout flow</title>
+  <desc id="desc">Normal controls or a compatible agent request a validated UI state, which drives a fixed GraphQL operation. That operation returns a typed layout and block tree for a guarded registry renderer.</desc>
+  <style>
+    .surface { fill: #fffaf3; stroke: #d8d2c8; stroke-width: 2; }
+    .label { fill: #141414; font: 700 24px Inter, Arial, sans-serif; text-anchor: middle; }
+    .detail { fill: #5d6470; font: 18px Inter, Arial, sans-serif; text-anchor: middle; }
+    .arrow { stroke: #0f766e; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f766e" />
+    </marker>
+  </defs>
+  <rect width="1200" height="360" rx="16" fill="#f7f4ef" />
+  <path class="arrow" d="M214 180 H286" />
+  <path class="arrow" d="M454 180 H526" />
+  <path class="arrow" d="M694 180 H766" />
+  <path class="arrow" d="M934 180 H1006" />
+  <g transform="translate(30 105)">
+    <rect class="surface" width="184" height="150" rx="12" />
+    <text class="label" x="92" y="59">Controls or</text>
+    <text class="label" x="92" y="89">agent</text>
+    <text class="detail" x="92" y="121">request</text>
+  </g>
+  <g transform="translate(270 105)">
+    <rect class="surface" width="184" height="150" rx="12" />
+    <text class="label" x="92" y="59">Validated</text>
+    <text class="label" x="92" y="89">UI state</text>
+    <text class="detail" x="92" y="121">finite input</text>
+  </g>
+  <g transform="translate(510 105)">
+    <rect class="surface" width="184" height="150" rx="12" />
+    <text class="label" x="92" y="59">Fixed</text>
+    <text class="label" x="92" y="89">GraphQL query</text>
+    <text class="detail" x="92" y="121">known fields</text>
+  </g>
+  <g transform="translate(750 105)">
+    <rect class="surface" width="184" height="150" rx="12" />
+    <text class="label" x="92" y="59">Typed layout</text>
+    <text class="label" x="92" y="89">and blocks</text>
+    <text class="detail" x="92" y="121">union tree</text>
+  </g>
+  <g transform="translate(990 105)">
+    <rect class="surface" width="184" height="150" rx="12" />
+    <text class="label" x="92" y="59">Guarded</text>
+    <text class="label" x="92" y="89">renderer</text>
+    <text class="detail" x="92" y="121">reviewed registry</text>
+  </g>
+</svg>

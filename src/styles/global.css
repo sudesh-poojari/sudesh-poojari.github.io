@@ -374,6 +374,23 @@ svg {
   padding: 0.08rem 0.28rem;
 }
 
+.prose figure {
+  margin: 2rem 0;
+}
+
+.prose figure img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: block;
+}
+
+.prose figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.65rem;
+}
+
 .contact-section {
   max-width: 860px;
 }
