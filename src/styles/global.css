@@ -136,12 +136,18 @@ svg {
 }
 
 .hero h1,
-.page-title h1,
-.article-header h1 {
+.page-title h1 {
   font-size: clamp(2.4rem, 6vw, 5.7rem);
   line-height: 0.98;
   margin: 0;
   max-width: 11ch;
+}
+
+.article-header h1 {
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  line-height: 1.04;
+  margin: 0;
+  max-width: 18ch;
 }
 
 .hero-copy {
@@ -460,9 +466,12 @@ svg {
   }
 
   .hero h1,
-  .page-title h1,
-  .article-header h1 {
+  .page-title h1 {
     font-size: clamp(2.35rem, 15vw, 4rem);
+  }
+
+  .article-header h1 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
   }
 
   .grid {
